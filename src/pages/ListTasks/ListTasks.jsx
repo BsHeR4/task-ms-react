@@ -53,7 +53,7 @@ const ListTasks = () => {
 
   return (
 
-    <div className="white-spacing h-[calc(100vh-76.8px)]">
+    <div className="white-spacing bg-gray-900">
       <div className="flex justify-between items-center">
         {/* Filters */}
         <div className="pt-4 flex gap-9 items-center">
@@ -90,11 +90,11 @@ const ListTasks = () => {
       {/* Tasks */}
       {
         loading ? (
-          <div className="flex justify-center bg-gray-900 h-screen items-center bg-gray-900x">
+          <div className="flex justify-center bg-gray-900 h-screen items-center">
             <p className='text-white text-center font-bold'>Loading ...</p>
           </div>
         ) : (
-          <div className="bg-gray-900">
+          <div>
             <div className="divide-y divide-white/5">
               {tasks.map((task) => (
                 <TaskItem
@@ -102,6 +102,7 @@ const ListTasks = () => {
                   id={task.id}
                   title={task.title}
                   description={task.description}
+                  status={task.status}
                   onDelete={handleDeleteTask}
                 />
               ))}
