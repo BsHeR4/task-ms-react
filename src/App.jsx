@@ -11,12 +11,12 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className="bg-gray-900">
       <Nav />
-      <div className="px-20">
+      <div>
         <Outlet />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,9 @@
 @import "tailwindcss";
 
-@theme {
+@theme {}
+
+@layer components {
+    .white-spacing {
+        @apply px-3 sm:px-10 lg:px-20
+    }
 }
