@@ -1,6 +1,6 @@
-const Input = ({ id, label, name, type, required = true, placeholder, onChange }) => {
+const Input = ({ id, label, name, type, required = true, placeholder, value, onChange }) => {
 
-    const renderInput = (type) => {
+    const renderInput = (type, value) => {
         switch (type) {
 
             case 'textarea':
@@ -10,6 +10,7 @@ const Input = ({ id, label, name, type, required = true, placeholder, onChange }
                             rows={10}
                             className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                             onChange={onChange}
+                            defaultValue={value}
                         >
                         </textarea>
                     </>
@@ -25,6 +26,7 @@ const Input = ({ id, label, name, type, required = true, placeholder, onChange }
                         className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                         onChange={onChange}
                         placeholder={placeholder ? placeholder : ''}
+                        defaultValue={value}
 
                     />
                 )
@@ -37,7 +39,7 @@ const Input = ({ id, label, name, type, required = true, placeholder, onChange }
                 {label}
             </label>
             <div className="mt-2">
-                {renderInput(type)}
+                {renderInput(type, value)}
             </div>
         </div>
     )

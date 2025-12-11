@@ -1,6 +1,6 @@
 import Input from '../Input/Input'
 
-const Form = ({ inputs, submitTitle, dataHandle }) => {
+const Form = ({ inputs, submitTitle, dataHandle, children }) => {
     let data;
 
     const sendData = (event) => {
@@ -21,12 +21,14 @@ const Form = ({ inputs, submitTitle, dataHandle }) => {
                             type={input.type}
                             required={input.required}
                             onChange={(event) => { data = { ...data, [input.name]: event.target.value } }}
+                            value={input.value}
                         />
                     )
 
                 ))
             }
 
+            {children}
             <div>
                 <input
                     type="submit"
