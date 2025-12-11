@@ -46,6 +46,10 @@ const ListTasks = () => {
     }
   }
 
+  const handleDeleteTask = (id) => {
+    setTasks((prev) => prev.filter(task => task.id !== id))
+  }
+
   return (
 
     <div className="white-spacing h-[calc(100vh-76.8px)]">
@@ -87,6 +91,7 @@ const ListTasks = () => {
                   id={task.id}
                   title={task.title}
                   description={task.description}
+                  onDelete={handleDeleteTask}
                 />
               ))}
             </div>
