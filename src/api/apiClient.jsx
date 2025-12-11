@@ -42,7 +42,7 @@ apiClient.interceptors.response.use(
             case 401:
                 console.warn("Unauthorized → redirecting to login …")
                 localStorage.removeItem("task-ms-token")
-                window.location.href = "/signin"
+                window.location.href = "/"
                 break
 
             case 422:
