@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import Form from "../../components/Form/Form"
-import TaskService from './../../services/TaskService'
+import TaskService from '../../services/TaskService'
 
 const EditTask = () => {
 

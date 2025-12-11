@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom"
-import SignIn from "./pages/SignIn/SignIn"
+import SignIn from "./pages/Auth/SignIn"
 import Auth from "./pages/Auth/Auth"
 import App from "./App"
-import ListTasks from "./pages/listTasks/listTasks"
+import ListTasks from "./pages/tasks/listTasks"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
-import Register from "./pages/Register/Register"
-import CreateTask from "./pages/CreateTask/CreateTask"
-import EditTask from "./pages/EditTask/EditTask"
+import Register from "./pages/Auth/Register"
+import CreateTask from "./pages/tasks/CreateTask"
+import EditTask from "./pages/tasks/EditTask"
 
 const routes = createBrowserRouter([
     {
