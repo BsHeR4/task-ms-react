@@ -18,7 +18,7 @@ const TaskItem = ({ id, title, description, onDelete }) => {
             </div>
             <div className="flex items-end gap-2">
                 <Link
-                    className="flex justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
+                    className="flex justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                 >
                     Edit
                 </Link>

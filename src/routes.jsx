@@ -5,6 +5,7 @@ import App from "./App"
 import ListTasks from "./pages/listTasks/listTasks"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import Register from "./pages/Register/Register"
+import CreateTask from "./pages/CreateTask/CreateTask"
 
 const routes = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
             {
                 path: '',
                 element: <ListTasks />
+            },
+            {
+                path: 'create-task',
+                element: <CreateTask />
             }
         ]
     },

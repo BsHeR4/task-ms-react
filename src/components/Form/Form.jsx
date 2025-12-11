@@ -19,7 +19,7 @@ const Form = ({ inputs, submitTitle, dataHandle }) => {
                             label={input.label}
                             name={input.name}
                             type={input.type}
-                            required
+                            required={input.required}
                             onChange={(event) => { data = { ...data, [input.name]: event.target.value } }}
                         />
                     )

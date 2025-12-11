@@ -3,6 +3,7 @@ import TaskService from "../../services/TaskService"
 import TaskItem from "../../components/TaskItem/TaskItem"
 import Input from "../../components/Input/Input"
 import Pagination from "../../components/Pagination/Pagination"
+import { Link } from "react-router-dom"
 
 const ListTasks = () => {
 
@@ -53,28 +54,36 @@ const ListTasks = () => {
   return (
 
     <div className="white-spacing h-[calc(100vh-76.8px)]">
+      <div className="flex justify-between items-center">
+        {/* Filters */}
+        <div className="pt-4 flex gap-9 items-center">
+          <Input
+            type="text"
+            placeholder="Search..."
+            onChange={(e) =>
+              setFilters({ ...filters, search: e.target.value })
+            }
+          />
+          <select
+            id="status"
+            class="appearance-none border bg-gray-700 border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 placeholder-gray-400 text-white mt-2"
+            onChange={(e) =>
+              setFilters({ ...filters, status: e.target.value })
+            }
+          >
+            <option value={""} selected>All</option>
+            <option value="done">Done</option>
+            <option value="pending">Pending</option>
+            <option value="in_progress">In progress</option>
+          </select>
+        </div>
 
-      {/* Filters */}
-      <div className="pt-4 flex gap-9 items-center">
-        <Input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) =>
-            setFilters({ ...filters, search: e.target.value })
-          }
-        />
-        <select
-          id="status"
-          class="appearance-none border bg-gray-700 border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 placeholder-gray-400 text-white mt-2"
-          onChange={(e) =>
-            setFilters({ ...filters, status: e.target.value })
-          }
+        <Link
+          to={'create-task'}
+          className="self-end rounded-md bg-green-600 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
         >
-          <option value={""} selected>All</option>
-          <option value="done">Done</option>
-          <option value="pending">Pending</option>
-          <option value="in_progress">In progress</option>
-        </select>
+          Create
+        </Link>
       </div>
 
       {/* Tasks */}
@@ -108,7 +117,7 @@ const ListTasks = () => {
           </div>
         )
       }
-    </div>
+    </div >
   )
 }
 
