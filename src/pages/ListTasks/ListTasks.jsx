@@ -66,12 +66,13 @@ const ListTasks = () => {
           />
           <select
             id="status"
-            class="appearance-none border bg-gray-700 border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 placeholder-gray-400 text-white mt-2"
+            className="appearance-none border bg-gray-700 border-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 placeholder-gray-400 text-white mt-2"
             onChange={(e) =>
               setFilters({ ...filters, status: e.target.value })
             }
+            defaultValue={""}
           >
-            <option value={""} selected>All</option>
+            <option value={""}>All</option>
             <option value="done">Done</option>
             <option value="pending">Pending</option>
             <option value="in_progress">In progress</option>
@@ -97,6 +98,7 @@ const ListTasks = () => {
             <div className="divide-y divide-white/5">
               {tasks.map((task) => (
                 <TaskItem
+                  key={task.id}
                   id={task.id}
                   title={task.title}
                   description={task.description}

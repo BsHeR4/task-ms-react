@@ -9,7 +9,7 @@ const TaskItem = ({ id, title, description, onDelete }) => {
     }
 
     return (
-        <div key={id} className="flex justify-between gap-x-6 py-5">
+        <div className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
                 <div className="min-w-0 flex-auto">
                     <p className="text-sm/6 font-semibold text-white">{title}</p>
@@ -18,6 +18,7 @@ const TaskItem = ({ id, title, description, onDelete }) => {
             </div>
             <div className="flex items-end gap-2">
                 <Link
+                    to={`edit-task/${id}`}
                     className="flex justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                 >
                     Edit

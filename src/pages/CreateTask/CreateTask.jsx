@@ -16,7 +16,6 @@ const CreateTask = () => {
 
         try {
             const res = await TaskService.createTask(data)
-            console.log(res.data)
             navigate("/tasks")
 
         } catch (err) {

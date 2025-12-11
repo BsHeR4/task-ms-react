@@ -6,6 +6,7 @@ import ListTasks from "./pages/listTasks/listTasks"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import Register from "./pages/Register/Register"
 import CreateTask from "./pages/CreateTask/CreateTask"
+import EditTask from "./pages/EditTask/EditTask"
 
 const routes = createBrowserRouter([
     {
@@ -33,7 +34,11 @@ const routes = createBrowserRouter([
             {
                 path: 'create-task',
                 element: <CreateTask />
-            }
+            },
+            {
+                path: 'edit-task/:id',
+                element: <EditTask />
+            },
         ]
     },
     {
